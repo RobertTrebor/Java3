@@ -1,4 +1,4 @@
-package hibernate;
+package de.cimdata.kundenreg.hibernate;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ import org.hibernate.criterion.Restrictions;
 /**
  * Home object for domain model class User.
  * 
- * @see hibernate.User
+ * @see de.cimdata.kundenreg.hibernate.User
  * @author Hibernate Tools
  */
 public class UserHome {

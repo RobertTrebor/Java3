@@ -15,6 +15,6 @@
         <property name="hibernate.format_sql">true</property>
         
         <!--  Mapping -->
-        <mapping resource="hibernate/User.hbm.xml" />
+        <mapping resource="de/cimdata/kundenreg/hibernate/Kunde.hbm.xml" />
     </session-factory>
 </hibernate-configuration>

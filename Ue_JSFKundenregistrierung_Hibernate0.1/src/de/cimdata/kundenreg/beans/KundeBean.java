@@ -1,10 +1,10 @@
-package de.cimdata.kundenreg.beans;
+										package de.cimdata.kundenreg.beans;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 import de.cimdata.kundenreg.data.Kunde;
-import de.cimdata.kundenreg.db.KundeDAO;
+import de.cimdata.kundenreg.hibernate.KundeHome;
 import de.cimdata.kundenreg.jsfutil.FacesHelper;
 
 @SessionScoped
@@ -17,11 +17,11 @@ public class KundeBean {
 	private String usr, pwd;
 	private Kunde kunde;
 	private int kundenStatus = 0;
-	private KundeDAO dbm;
+	private KundeHome dbm;
 
 	public KundeBean() {
 		kunde = new Kunde();
-		dbm = new KundeDAO();
+		dbm = new KundeHome();
 	}
 
 	public String getUsr() {

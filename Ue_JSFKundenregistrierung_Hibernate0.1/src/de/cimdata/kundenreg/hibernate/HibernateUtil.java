@@ -1,4 +1,4 @@
-package hibernate;
+package de.cimdata.kundenreg.hibernate;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
