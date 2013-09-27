@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<f:view contentType="text/html" />
+<f:loadBundle basename="bundle.label" var="label" />
+
+<h:head>
+	<title>Fromular</title>
+</h:head>
+<h:body>
+	<h:panelGroup rendered="#{kundeBean.kundenStatus==1}">
+		<h2>Neuer Kunde</h2>
+		<h:form>
+			<h:panelGrid border="1" columns="3">
+				<h:outputLabel value="Vorname" for="vorname" />
+				<h:inputText id="vorname" value="#{kundeBean.kunde.vorname}" />
+				<h:message for="vorname" />
+
+				<h:outputLabel value="Nachname" for="nachname" />
+				<h:inputText id="nachname" value="#{kundeBean.kunde.nachname}"
+					required="true" />
+				<h:message for="nachname" />
+
+				<h:outputLabel value="Email" for="email" />
+				<h:inputText id="email" value="#{kundeBean.kunde.email}"
+					required="true" />
+				<h:message for="email" />
+
+				<h:outputLabel value="Username" for="username" />
+				<h:inputText id="username" value="#{kundeBean.kunde.username}"
+					required="true" />
+				<h:message for="username" />
+
+				<h:outputLabel value="Passwort" for="passwort" />
+				<h:inputSecret id="passwort" value="#{kundeBean.kunde.passwort}"
+					required="true" />
+				<h:message for="passwort" />
+
+				<h:commandButton action="showKunde" value="#{label.nextButton}"></h:commandButton>
+
+			</h:panelGrid>
+		</h:form>
+		<h:messages errorStyle="color:red; display:block" />
+	</h:panelGroup>
+	<h:panelGroup rendered="#{kundeBean.kundenStatus==2}">
+		<h2>#{label.formHeader}</h2>
+		<h:form id="kundeForm">
+			<h:panelGrid columns="3">
+				<h:outputLabel value="Username" for="username" />
+				<h:inputText id="username" value="#{kundeBean.usr}" required="true" />
+				<h:message for="username" />
+
+
+				<h:outputLabel value="Passwort" for="passwort" />
+				<h:inputText id="passwort" value="#{kundeBean.pwd}" required="true">
+				</h:inputText>
+				<h:message for="passwort" />
+
+				<h:commandButton action="#{kundeBean.isKundeValid}"
+					value="#{label.nextButton}" />
+			</h:panelGrid>
+			<h:outputText id="login_fail" />
+			<h:message for="login_fail" errorStyle="color:red; display:block" />
+
+		</h:form>
+
+	</h:panelGroup>
+</h:body>
+</html>
